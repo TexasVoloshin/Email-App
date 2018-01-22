@@ -17,8 +17,12 @@ public class Email {
 
 	public Email(String firstName, String lastName) {
 		this.firstName = firstName;
+
+		System.out.println("First name is  : " + this.firstName);
 		this.lastName = lastName;
-		System.out.println("EMAIL CREATED : " + this.firstName + " " + this.lastName);
+		System.out.println("Last name is  : " + this.lastName);
+		System.out.println("EMAIL CREATED FOR : " + this.firstName + " " + this.lastName);
+
 		// Call a method asking for the department - return the department
 		this.department = setDepartment();
 		System.out.println("EMAIL Department  : " + this.department);
@@ -30,12 +34,13 @@ public class Email {
 		email = firstName.toLowerCase() + lastName.toLowerCase() + "@" + department + "." + companySuffix;
 		System.out.println("Your email is : " + email);
 	}
+	// Enter the name from keyboard
 
 	private String setDepartment() {
 		System.out.println(
 				"DEPARTMENT CODES: \n1 for Sales\n2for Development\n3 for Accounting\n0 for none\n Enter your department code: ");
 		Scanner in = new Scanner(System.in);
-	
+
 		int depChoice = in.nextInt();
 		if (depChoice == 1) {
 			return "sales";
